@@ -3,12 +3,17 @@ input.onButtonPressed(Button.A, function () {
     music.playMelody("C G D F - E F A ", 200)
 })
 input.onButtonPressed(Button.B, function () {
-    basic.showIcon(IconNames.Ghost)
-    for (let index = 0; index < 50; index++) {
-        music.playSoundEffect(music.createSoundEffect(WaveShape.Sine, 1960, 5000, 255, 0, 150, SoundExpressionEffect.None, InterpolationCurve.Linear), SoundExpressionPlayMode.UntilDone)
+    if (false) {
+        for (let index = 0; index < 3; index++) {
+            music.playTone(262, music.beat(BeatFraction.Whole))
+            music.playTone(294, music.beat(BeatFraction.Whole))
+            music.playTone(330, music.beat(BeatFraction.Whole))
+        }
+        music.playTone(262, music.beat(BeatFraction.Whole))
+    } else {
+        basic.showIcon(IconNames.Ghost)
     }
 })
-music.playMelody("E D G C E F G C ", 120)
 basic.showLeds(`
     # . # . #
     . # # # .
